@@ -79,7 +79,7 @@ class Doctor extends User
             if ($symptomBiomarker == 'BodyTemperature') {
                 $patientBiomarkerValue = $patient->getBiomarker($symptomBiomarker)->getValue();
 
-                if (abs($symptomValue[$patient->getBiomarker($symptomBiomarker)->getMark()] - $patientBiomarkerValue) < 3) {
+                if (abs($symptomValue[$patient->getBiomarker($symptomBiomarker)->getMark()] - $patientBiomarkerValue) < 2) {
                     $match[] = true;
                 }
             }
@@ -87,7 +87,7 @@ class Doctor extends User
             if ($symptomBiomarker == 'BloodPressure') {
                 $patientBiomarkerValue = $patient->getBiomarker($symptomBiomarker)->getValue()[0];
 
-                if (abs($symptomValue - $patientBiomarkerValue) < 6) {
+                if (abs($symptomValue - $patientBiomarkerValue) < 5) {
                     $match[] = true;
                 }
             }
